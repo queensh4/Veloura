@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#F4EDE4"/>
+  <g transform="translate(90,40)">
+    <rect width="300" height="320" rx="18" fill="#5A3E6B"/>
+    <text x="30" y="140" fill="#F4EDE4" font-size="26" font-family="serif">Velvet Collection</text>
+  </g>
+  <g transform="translate(420,40)">
+    <rect width="260" height="320" rx="18" fill="#B89CB8"/>
+    <text x="30" y="140" fill="#fff" font-size="26" font-family="serif">Limited Drop</text>
+  </g>
+</svg>
