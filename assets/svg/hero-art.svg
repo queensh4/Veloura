@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320">
+  <defs>
+    <linearGradient id="gr" x1="0" x2="1">
+      <stop offset="0" stop-color="#F4EDE4"/>
+      <stop offset="1" stop-color="#E6B7C1"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="320" rx="24" fill="url(#gr)"/>
+  <circle cx="120" cy="110" r="46" fill="#B89CB8" opacity=".6"/>
+  <circle cx="300" cy="80" r="28" fill="#5A3E6B" opacity=".3"/>
+  <circle cx="260" cy="220" r="64" fill="#5A3E6B" opacity=".15"/>
+  <text x="210" y="170" text-anchor="middle" font-family="Playfair Display, Georgia" font-size="40" fill="#2E2B2F">Veloura</text>
+</svg>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veloura — Tumblr Vintage & Classy Shop</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header container">
+    <div class="brand">
+      <img src="assets/svg/veloura-logo.svg" alt="Veloura Logo" class="logo"/>
+      <div class="brand-text">
+        <h1>Veloura</h1>
+        <p>Tumblr vintage & classy</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#produk">Produk</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#kritik-saran">Kritik & Saran</a>
+      <a href="#alamat">Alamat</a>
+    </nav>
+    <div class="cart-button" id="open-cart" aria-label="Buka keranjang" title="Keranjang">
+      <img src="assets/svg/cart.svg" alt="Cart icon"/>
+      <span class="cart-count" id="cart-count">0</span>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-text">
+      <h2>Elegan. Dreamy. Timeless.</h2>
+      <p>Koleksi curated dengan nuansa velvet & mauve untuk kamu yang suka estetika Tumblr yang vintage tapi modern.</p>
+      <a href="#produk" class="btn primary">Belanja Sekarang</a>
+    </div>
+    <div class="hero-art">
+      <img src="assets/svg/hero-art.svg" alt="Veloura Hero Art"/>
+    </div>
+  </section>
+
+  <!-- Slider Produk Terlaris (maks 5) -->
+  <section class="container top-picks" aria-label="Produk Terlaris">
+    <div class="section-head">
+      <h3>Terlaris Minggu Ini</h3>
+      <div class="slider-controls">
+        <button id="prev-slide" aria-label="Sebelumnya">‹</button>
+        <button id="next-slide" aria-label="Berikutnya">›</button>
+      </div>
+    </div>
+    <div class="slider" id="slider">
+      <!-- Slides injected by JS -->
+    </div>
+  </section>
+
+  <!-- Grid Produk -->
+  <section class="container products" id="produk">
+    <h3>Produk Baru</h3>
+    <div class="grid" id="product-grid">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="container testimonials" id="testimoni">
+    <h3>Apa Kata Mereka</h3>
+    <div class="testi-list" id="testi-list">
+      <!-- testimonials populated via JS (with defaults + localStorage) -->
+    </div>
+    <form id="testi-form" class="card form">
+      <h4>Tulis Testimoni</h4>
+      <div class="form-row">
+        <label for="tname">Nama</label>
+        <input type="text" id="tname" required placeholder="Nama kamu" />
+      </div>
+      <div class="form-row">
+        <label for="trating">Rating</label>
+        <select id="trating" required>
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="tmsg">Pesan</label>
+        <textarea id="tmsg" rows="3" required placeholder="Tulis pengalamanmu belanja di Veloura..."></textarea>
+      </div>
+      <button class="btn secondary" type="submit">Kirim Testimoni</button>
+    </form>
+  </section>
+
+  <!-- Kritik & Saran -->
+  <section class="container feedback" id="kritik-saran">
+    <h3>Kritik & Saran</h3>
+    <form id="feedback-form" class="card form">
+      <div class="form-row">
+        <label for="fname">Nama (opsional)</label>
+        <input type="text" id="fname" placeholder="Boleh dikosongkan"/>
+      </div>
+      <div class="form-row">
+        <label for="fmsg">Masukan untuk Veloura</label>
+        <textarea id="fmsg" rows="4" required placeholder="Tulis kritik/saran di sini..."></textarea>
+      </div>
+      <button class="btn primary" type="submit">Kirim Masukan</button>
+      <p class="muted small">Data akan tersimpan di perangkatmu (localStorage).</p>
+    </form>
+    <div class="feedback-list card" id="feedback-list" aria-live="polite">
+      <h4>Masukan Terbaru</h4>
+      <ul id="feedback-items"></ul>
+    </div>
+  </section>
+
+  <!-- Alamat -->
+  <footer class="site-footer" id="alamat">
+    <div class="container footer-inner">
+      <div>
+        <h4>Veloura</h4>
+        <p>Jl. Riveside 56, Jakarta</p>
+        <p class="muted">Open daily 10.00–21.00 WIB</p>
+      </div>
+      <div>
+        <button class="btn checkout" id="checkout-btn">
+          <img src="assets/svg/checkout.svg" alt="" />
+          Checkout
+        </button>
+        <p class="muted small">Checkout dilengkapi progress bar interaktif.</p>
+      </div>
+    </div>
+    <p class="tiny center muted">© <span id="year"></span> Veloura. All rights reserved.</p>
+  </footer>
+
+  <!-- Keranjang Sidebar -->
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h4>Keranjang</h4>
+      <button id="close-cart" aria-label="Tutup">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-summary">
+      <div class="row">
+        <span>Total</span>
+        <strong id="cart-total">Rp0</strong>
+      </div>
+      <button class="btn primary" id="goto-checkout">Lanjut ke Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal dengan Progress Bar -->
+  <div class="modal" id="checkout-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h4>Checkout</h4>
+        <button id="close-modal" aria-label="Tutup">✕</button>
+      </div>
+      <div class="progress">
+        <div class="progress-steps" id="progress-steps">
+          <span class="step active">Keranjang</span>
+          <span class="step">Alamat</span>
+          <span class="step">Pembayaran</span>
+          <span class="step">Review</span>
+          <span class="step">Selesai</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 20%"></div>
+        </div>
+      </div>
+      <div class="modal-body" id="checkout-body">
+        <!-- Step content injected -->
+      </div>
+      <div class="modal-actions">
+        <button class="btn secondary" id="prev-step">← Kembali</button>
+        <button class="btn primary" id="next-step">Lanjut →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
